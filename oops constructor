@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Complex {
+public:
+    int real;
+    int imag;
+
+    // Constructor
+    Complex(int r = 0, int i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    // Operator Overloading
+    Complex operator + (Complex obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex n1(2, 3);
+    Complex n2(4, 5);
+
+    Complex n3 = n1 + n2;
+
+    cout << "Sum = ";
+    n3.display();
+
+    return 0;
+}
